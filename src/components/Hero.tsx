@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { siteConfig } from '@/data/site';
 import { ArrowRight, MapPin } from './Icons';
@@ -10,6 +10,21 @@ interface HeroProps {
 }
 
 export default function Hero({ onOpenEnquiry }: HeroProps) {
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  const toggleAudio = () => {
+    if (!videoRef.current) return;
+    if (isMuted) {
+      videoRef.current.muted = false;
+      videoRef.current.volume = 0.55;
+      setIsMuted(false);
+    } else {
+      videoRef.current.muted = true;
+      setIsMuted(true);
+    }
+  };
+
   const scrollToExplore = (e: React.MouseEvent) => {
     e.preventDefault();
     const target = document.querySelector('#the-lab');
@@ -20,16 +35,20 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
 
   return (
     <section className="relative min-h-[100svh] w-full flex flex-col justify-between overflow-hidden bg-[#070707]">
-      {/* Background Cinematic Visual & Vignette */}
-      <div className="absolute inset-0 z-0 select-none">
-        <Image
-          src={siteConfig.hero.bgImage}
-          alt="Strength Lab Gym Tumakuru Interior"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center scale-105 transform motion-safe:transition-transform motion-safe:duration-1000 opacity-40 brightness-75 contrast-125"
-        />
+      {/* Background Cinematic Visual Loop & Vignette */}
+      <div className="absolute inset-0 z-0 select-none overflow-hidden">
+        <video
+          ref={videoRef}
+          autoPlay
+          muted={isMuted}
+          loop
+          playsInline
+          preload="auto"
+          poster={siteConfig.hero.bgImage}
+          className="absolute inset-0 w-full h-full object-cover object-center grayscale contrast-125 brightness-[0.72] scale-105"
+        >
+          <source src="/videos/hero-cinematic.mp4" type="video/mp4" />
+        </video>
 
         {/* Multi-layered cinematic gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#070707] via-[#070707]/75 to-[#070707]/50" />
@@ -122,12 +141,26 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
       </div>
 
       {/* Bottom Metadata Bar */}
-      <div className="relative z-10 w-full border-t border-white/[0.08] bg-[#070707]/75 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs tracking-widest text-zinc-300 uppercase font-mono">
+      <div className="relative z-10 w-full border-t border-white/[0.08] bg-[#070707]/80 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs tracking-widest text-zinc-300 uppercase font-mono">
           <div className="flex items-center gap-2">
             <MapPin size={14} className="text-[#FFE600]" />
             <span>{siteConfig.hero.locationLeft}</span>
           </div>
+
+          {/* Luxury Ambient Audio Toggle */}
+          <button
+            onClick={toggleAudio}
+            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-black/80 hover:bg-black border border-white/15 hover:border-[#FFE600]/60 transition-all text-[11px] font-mono tracking-widest uppercase text-zinc-300 hover:text-white cursor-pointer shadow-lg active:scale-95"
+            aria-label="Toggle ambient gym audio"
+          >
+            <span className="flex items-end gap-[3px] h-3.5">
+              <span className={`w-[2px] bg-[#FFE600] rounded-full transition-all duration-300 ${!isMuted ? 'h-3.5 animate-pulse' : 'h-1.5'}`} />
+              <span className={`w-[2px] bg-[#FFE600] rounded-full transition-all duration-300 delay-75 ${!isMuted ? 'h-2 animate-pulse' : 'h-2.5'}`} />
+              <span className={`w-[2px] bg-[#FFE600] rounded-full transition-all duration-300 delay-150 ${!isMuted ? 'h-3 animate-pulse' : 'h-1'}`} />
+            </span>
+            <span className="font-semibold">{!isMuted ? 'AMBIENT AUDIO: ON' : 'AMBIENT AUDIO: OFF'}</span>
+          </button>
 
           <div className="flex items-center gap-6">
             <a
