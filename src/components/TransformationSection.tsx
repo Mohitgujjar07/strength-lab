@@ -38,7 +38,7 @@ export default function TransformationSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10">
           <div>
             <div className="eyebrow-pill mb-5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#E10600]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FFE600]" />
               <span className="label-caps text-[11px] text-zinc-300">Real people. Real work.</span>
             </div>
             <h2 className="section-title text-white font-display">
@@ -47,7 +47,7 @@ export default function TransformationSection() {
           </div>
           <div className="max-w-md">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-zinc-400 text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-zinc-500" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FFE600]" />
               Demo record // Member archive coming soon
             </div>
             <p className="text-zinc-400 text-[15px] leading-relaxed">
@@ -70,7 +70,7 @@ export default function TransformationSection() {
                 if (e.key === 'ArrowLeft') setSliderPosition((p) => Math.max(4, p - 4));
                 if (e.key === 'ArrowRight') setSliderPosition((p) => Math.min(96, p + 4));
               }}
-              className="relative w-full h-[360px] sm:h-[480px] overflow-hidden select-none cursor-ew-resize rounded-2xl border border-white/10 outline-none focus-visible:ring-2 focus-visible:ring-[#E10600] touch-none"
+              className="relative w-full h-[360px] sm:h-[480px] overflow-hidden select-none cursor-ew-resize rounded-2xl border border-white/10 outline-none focus-visible:ring-2 focus-visible:ring-[#FFE600] touch-none"
               onMouseDown={() => setIsDragging(true)}
               onMouseUp={() => setIsDragging(false)}
               onMouseLeave={() => setIsDragging(false)}
@@ -88,7 +88,7 @@ export default function TransformationSection() {
                   priority
                   draggable={false}
                 />
-                <div className="absolute top-4 right-4 rounded-full bg-black/75 backdrop-blur-md px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[#ff5a52] border border-white/15">
+                <div className="absolute top-4 right-4 rounded-full bg-black/85 backdrop-blur-md px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[#FFE600] border border-[#FFE600]/30">
                   After // Post-cycle
                 </div>
               </div>
@@ -114,15 +114,15 @@ export default function TransformationSection() {
 
               {/* Divider + handle */}
               <div
-                className="absolute top-0 bottom-0 w-[2px] bg-[#E10600] z-20 pointer-events-none shadow-[0_0_20px_rgba(225,6,0,0.8)]"
+                className="absolute top-0 bottom-0 w-[2px] bg-[#FFE600] z-20 pointer-events-none shadow-[0_0_20px_rgba(255,230,0,0.8)]"
                 style={{ left: `${sliderPosition}%` }}
               >
-                <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-[#0a0a0a] border-2 border-[#E10600] flex items-center justify-center text-white shadow-2xl">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18-6-6 6-6" /><path d="m15 6 6 6-6 6" /></svg>
+                <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-[#0a0a0a] border-2 border-[#FFE600] flex items-center justify-center text-[#FFE600] shadow-[0_0_20px_rgba(255,230,0,0.4)]">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18-6-6 6-6" /><path d="m15 6 6 6-6 6" /></svg>
                 </div>
               </div>
 
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-black/75 backdrop-blur-md px-4 py-2 border border-white/10 text-[10px] font-bold uppercase text-zinc-300 tracking-[0.16em] z-10 pointer-events-none whitespace-nowrap">
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-black/85 backdrop-blur-md px-4 py-2 border border-white/10 text-[10px] font-bold uppercase text-zinc-300 tracking-[0.16em] z-10 pointer-events-none whitespace-nowrap">
                 Drag to compare
               </div>
             </div>
@@ -136,7 +136,7 @@ export default function TransformationSection() {
               <h3 className="font-display text-[1.7rem] text-white leading-none">
                 {item.name}
               </h3>
-              <div className="text-[12px] font-bold text-[#ff5a52] uppercase tracking-[0.12em] mt-2">
+              <div className="text-[12px] font-bold text-[#FFE600] uppercase tracking-[0.12em] mt-2">
                 Goal: {item.goal}
               </div>
             </div>
@@ -150,17 +150,17 @@ export default function TransformationSection() {
                   {item.duration}
                 </div>
               </div>
-              <div className="p-4 rounded-xl bg-[#E10600]/10 border border-[#E10600]/30">
-                <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#ff5a52] mb-1">
+              <div className="p-4 rounded-xl bg-[#FFE600]/10 border border-[#FFE600]/30">
+                <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#FFE600] mb-1">
                   Result stat
                 </div>
-                <div className="font-display text-[1.45rem] text-white leading-none">
+                <div className="font-display text-[1.45rem] text-[#FFE600] leading-none">
                   {item.result}
                 </div>
               </div>
             </div>
 
-            <p className="text-zinc-300 text-[14px] leading-relaxed italic border-l-[3px] border-[#E10600] pl-4">
+            <p className="text-zinc-300 text-[14px] leading-relaxed italic border-l-[3px] border-[#FFE600] pl-4">
               &quot;{item.quote}&quot;
             </p>
 

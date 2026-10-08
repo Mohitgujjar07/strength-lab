@@ -30,7 +30,7 @@ export default function MobileStickyCta({ onOpenEnquiry }: MobileStickyCtaProps)
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-1.5 py-3 px-1 rounded-xl bg-white/[0.05] border border-white/10 text-white active:scale-[0.97] transition-transform"
         >
-          <MapPin size={15} className="text-[#ff5a52]" />
+          <MapPin size={15} className="text-[#FFE600]" />
           <span className="text-[10px] font-bold uppercase tracking-[0.1em]">
             Directions
           </span>
@@ -38,10 +38,10 @@ export default function MobileStickyCta({ onOpenEnquiry }: MobileStickyCtaProps)
 
         <button
           onClick={onOpenEnquiry}
-          className="btn-primary rounded-xl flex items-center justify-center gap-1.5 py-3 px-1 text-white font-bold active:scale-[0.97] transition-transform"
+          className="btn-primary rounded-xl flex items-center justify-center gap-1.5 py-3 px-1 text-black font-extrabold active:scale-[0.97] transition-transform shadow-[0_0_15px_rgba(255,230,0,0.35)]"
         >
           <ArrowUpRight size={15} />
-          <span className="text-[10px] font-bold uppercase tracking-[0.1em]">
+          <span className="text-[10px] font-extrabold uppercase tracking-[0.1em]">
             Join lab
           </span>
         </button>

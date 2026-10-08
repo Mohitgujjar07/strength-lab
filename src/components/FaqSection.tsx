@@ -16,7 +16,7 @@ export default function FaqSection() {
       <div className="max-w-3xl mx-auto px-5 sm:px-8">
         <div className="text-center mb-12">
           <div className="eyebrow-pill mb-5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#E10600]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FFE600]" />
             <span className="label-caps text-[11px] text-zinc-300">Frequently asked questions</span>
           </div>
           <h2 className="section-title text-white font-display mb-4">
@@ -37,16 +37,16 @@ export default function FaqSection() {
                   className="w-full flex items-center justify-between text-left gap-4 px-6 sm:px-8 py-6 group"
                   aria-expanded={isOpen}
                 >
-                  <span className={`font-display text-[1.15rem] sm:text-[1.4rem] leading-tight transition-colors ${isOpen ? 'text-white' : 'text-zinc-200 group-hover:text-white'}`}>
+                  <span className={`font-display text-[1.15rem] sm:text-[1.4rem] leading-tight transition-colors ${isOpen ? 'text-[#FFE600]' : 'text-zinc-200 group-hover:text-white'}`}>
                     {item.question}
                   </span>
-                  <span className={`w-9 h-9 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen ? 'bg-[#E10600] border-[#E10600] text-white rotate-180' : 'border-white/15 text-zinc-400 group-hover:border-white/30 group-hover:text-white'}`}>
+                  <span className={`w-9 h-9 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen ? 'bg-[#FFE600] border-[#FFE600] text-black rotate-180 shadow-[0_0_15px_rgba(255,230,0,0.4)]' : 'border-white/15 text-zinc-400 group-hover:border-white/30 group-hover:text-white'}`}>
                     <ChevronDown size={17} />
                   </span>
                 </button>
                 <div className="faq-answer px-6 sm:px-8" data-open={isOpen}>
                   <div>
-                    <p className="text-zinc-400 text-[14px] sm:text-[15px] leading-relaxed pb-6 ml-1 pl-4 border-l-2 border-[#E10600]">
+                    <p className="text-zinc-300 text-[14px] sm:text-[15px] leading-relaxed pb-6 ml-1 pl-4 border-l-2 border-[#FFE600]">
                       {item.answer}
                     </p>
                   </div>

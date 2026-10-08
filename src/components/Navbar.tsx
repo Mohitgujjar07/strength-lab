@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { siteConfig } from '@/data/site';
 import { Menu, X, ArrowUpRight, MessageCircle } from './Icons';
 
@@ -51,50 +52,62 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-[#080808]/90 backdrop-blur-xl border-b border-white/10 py-3 shadow-[0_16px_40px_-16px_rgba(0,0,0,0.9)]'
-            : 'bg-gradient-to-b from-black/70 to-transparent py-5 md:py-6'
+            ? 'bg-[#070707]/92 backdrop-blur-md border-b border-white/[0.08] py-3.5 shadow-2xl'
+            : 'bg-transparent py-5 md:py-7'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Brand Logo */}
+            {/* Brand Logo with Official Badge */}
             <Link
               href="/"
-              className="group flex flex-col items-start focus:outline-none"
+              className="group flex items-center gap-3 focus:outline-none"
             >
-              <div className="flex items-center gap-2">
-                <span className="font-display text-[1.35rem] sm:text-2xl tracking-tight text-white transition-colors group-hover:text-white leading-none">
-                  STRENGTH<span className="text-[#E10600]">LAB</span>
-                </span>
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#E10600] animate-pulse mt-1" />
+              <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border-2 border-[#FFE600] logo-glow shrink-0">
+                <Image
+                  src="/logo.png"
+                  alt="Strength Lab Official Logo"
+                  fill
+                  sizes="44px"
+                  priority
+                  className="object-cover"
+                />
               </div>
-              <span className="label-caps text-[9px] text-zinc-500 mt-1 hidden sm:block">
-                TUMAKURU · 13,000 SQ. FT.
-              </span>
+              <div className="flex flex-col items-start">
+                <div className="flex items-center gap-2">
+                  <span className="font-display text-xl sm:text-2xl tracking-tight text-white transition-colors group-hover:text-[#FFE600]">
+                    STRENGTH LAB
+                  </span>
+                  <span className="inline-block w-2 h-2 rounded-full bg-[#FFE600] animate-pulse" />
+                </div>
+                <span className="label-caps text-[9px] text-[#FFE600] tracking-widest -mt-1 hidden sm:block">
+                  TUMAKURU · 13,000 SQ. FT.
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-7">
+            <nav className="hidden lg:flex items-center gap-8">
               {siteConfig.navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-[11px] uppercase tracking-[0.18em] font-semibold text-zinc-400 hover:text-white transition-colors relative py-1.5 group"
+                  className="text-xs uppercase tracking-[0.2em] font-medium text-zinc-300 hover:text-white transition-colors relative py-1 group"
                 >
                   {item.label}
-                  <span className="absolute -bottom-0.5 left-0 w-0 h-[2px] rounded-full bg-[#E10600] transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#FFE600] transition-all duration-300 group-hover:w-full" />
                 </a>
               ))}
             </nav>
 
             {/* Action Buttons */}
-            <div className="hidden sm:flex items-center gap-3">
+            <div className="hidden sm:flex items-center gap-4">
               <a
                 href={siteConfig.contact.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden md:inline-flex items-center gap-2 px-3.5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-300 hover:text-white rounded-full border border-white/10 hover:border-white/25 bg-white/[0.03] hover:bg-white/[0.07] transition-all"
+                className="hidden md:inline-flex items-center gap-2 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-zinc-300 hover:text-white border border-white/10 hover:border-[#FFE600]/40 transition-all"
                 title="Direct WhatsApp"
               >
                 <MessageCircle size={15} className="text-[#25D366]" />
@@ -103,10 +116,10 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
 
               <button
                 onClick={onOpenEnquiry}
-                className="btn-primary rounded-full relative inline-flex items-center justify-center gap-2 px-6 py-2.5 text-white text-[11px] font-bold uppercase tracking-[0.16em] transition-all duration-200 hover:-translate-y-px active:translate-y-0"
+                className="relative inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#FFE600] hover:bg-[#FFF033] text-black text-xs font-extrabold uppercase tracking-[0.18em] transition-all duration-200 shadow-lg shadow-yellow-950/30 hover:scale-[1.02] active:scale-[0.98]"
               >
                 <span>JOIN THE LAB</span>
-                <ArrowUpRight size={14} />
+                <ArrowUpRight size={14} className="stroke-[2.5]" />
               </button>
             </div>
 
@@ -114,16 +127,16 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
             <div className="flex items-center gap-2 lg:hidden">
               <button
                 onClick={onOpenEnquiry}
-                className="sm:hidden px-4 py-2 rounded-full bg-[#E10600] text-white text-[11px] font-bold uppercase tracking-wider"
+                className="sm:hidden px-3 py-1.5 bg-[#FFE600] text-black text-[11px] font-extrabold uppercase tracking-wider shadow"
               >
                 JOIN
               </button>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="w-10 h-10 rounded-full border border-white/10 bg-white/[0.04] flex items-center justify-center text-zinc-200 hover:text-white hover:border-white/25 focus:outline-none transition-colors"
+                className="p-2 text-zinc-300 hover:text-white focus:outline-none"
                 aria-label="Toggle navigation menu"
               >
-                {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+                {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
               </button>
             </div>
           </div>
@@ -132,33 +145,46 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-[#080808]/95 backdrop-blur-2xl lg:hidden flex flex-col justify-between pt-24 pb-24 px-6 animate-fadeIn">
-          <div className="flex flex-col gap-5">
-            <div className="text-[10px] tracking-[0.25em] text-zinc-500 uppercase font-semibold">
-              NAVIGATION // DIRECT ACCESS
+        <div className="fixed inset-0 z-40 bg-[#070707]/98 backdrop-blur-xl lg:hidden flex flex-col justify-between pt-28 pb-10 px-6 animate-fadeIn">
+          <div className="flex flex-col gap-6">
+            <div className="flex items-center gap-3 pb-4 border-b border-white/[0.08]">
+              <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#FFE600] logo-glow">
+                <Image
+                  src="/logo.png"
+                  alt="Strength Lab Logo"
+                  fill
+                  sizes="48px"
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <div className="font-display text-xl text-white">STRENGTH LAB</div>
+                <div className="text-[10px] tracking-widest text-[#FFE600] font-mono">TUMAKURU, KARNATAKA</div>
+              </div>
             </div>
-            <nav className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden divide-y divide-white/[0.06]">
+
+            <nav className="flex flex-col gap-4">
               {siteConfig.navItems.map((item, idx) => (
                 <a
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="flex items-center justify-between px-5 py-4 text-lg font-display uppercase tracking-wide text-zinc-100 hover:text-white hover:bg-white/[0.04] transition-colors"
+                  className="flex items-center justify-between text-2xl font-display uppercase tracking-wider text-zinc-200 hover:text-[#FFE600] transition-colors py-1.5 border-b border-white/[0.06]"
                 >
                   <span>{item.label}</span>
-                  <span className="text-[11px] text-zinc-500 font-mono rounded-full border border-white/10 px-2 py-0.5">0{idx + 1}</span>
+                  <span className="text-xs text-[#FFE600] font-mono">0{idx + 1}</span>
                 </a>
               ))}
             </nav>
           </div>
 
-          <div className="flex flex-col gap-3 pt-5">
+          <div className="flex flex-col gap-4 pt-6 border-t border-white/10">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 if (onOpenEnquiry) onOpenEnquiry();
               }}
-              className="btn-primary rounded-xl w-full py-4 text-white text-sm font-bold uppercase tracking-widest text-center"
+              className="w-full py-4 bg-[#FFE600] text-black text-sm font-extrabold uppercase tracking-widest text-center shadow-lg"
             >
               MEMBERSHIP ENQUIRY
             </button>
@@ -167,20 +193,20 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                 href={siteConfig.contact.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-3.5 rounded-xl border border-white/12 bg-white/[0.03] text-xs uppercase font-semibold text-zinc-200 flex items-center justify-center gap-2"
+                className="py-3 border border-white/15 text-xs uppercase font-medium text-zinc-300 hover:border-[#FFE600] flex items-center justify-center gap-2"
               >
                 <MessageCircle size={15} className="text-[#25D366]" />
                 WhatsApp
               </a>
               <a
                 href={`tel:${siteConfig.contact.phone}`}
-                className="py-3.5 rounded-xl border border-white/12 bg-white/[0.03] text-xs uppercase font-semibold text-zinc-200 flex items-center justify-center gap-2"
+                className="py-3 border border-white/15 text-xs uppercase font-medium text-zinc-300 hover:border-[#FFE600] flex items-center justify-center gap-2"
               >
                 Call Lab
               </a>
             </div>
-            <div className="text-center text-[10px] text-zinc-500 uppercase tracking-widest mt-1">
-              KNS MANSION · B.H. ROAD · TUMAKURU
+            <div className="text-center text-[10px] text-zinc-400 uppercase tracking-widest mt-2">
+              KNS MANSION · 2ND FL · B.H. ROAD · TUMAKURU
             </div>
           </div>
         </div>

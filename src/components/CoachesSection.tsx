@@ -9,7 +9,7 @@ export default function CoachesSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10">
           <div>
             <div className="eyebrow-pill mb-5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#E10600]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FFE600]" />
               <span className="label-caps text-[11px] text-zinc-300">Coaching staff // Intent & mastery</span>
             </div>
             <h2 className="section-title text-white font-display">
@@ -18,7 +18,7 @@ export default function CoachesSection() {
           </div>
           <div className="max-w-md">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-zinc-400 text-[11px] font-semibold uppercase tracking-[0.12em] mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-zinc-500" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FFE600]" />
               Coach roster // Full bios coming soon
             </div>
             <p className="text-zinc-400 text-[15px] leading-relaxed">
@@ -47,7 +47,7 @@ export default function CoachesSection() {
                 </div>
                 <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
                   <div>
-                    <div className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#ff5a52]">
+                    <div className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#FFE600]">
                       {coach.role}
                     </div>
                     <h3 className="font-display text-[1.55rem] text-white leading-none mt-1">

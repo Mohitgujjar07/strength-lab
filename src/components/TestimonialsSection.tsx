@@ -9,7 +9,7 @@ export default function TestimonialsSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10">
           <div>
             <div className="eyebrow-pill mb-5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#E10600]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FFE600]" />
               <span className="label-caps text-[11px] text-zinc-300">Athlete testimony // Tumakuru</span>
             </div>
             <h2 className="section-title text-white font-display">
@@ -17,7 +17,7 @@ export default function TestimonialsSection() {
             </h2>
           </div>
           <div className="max-w-md rounded-2xl border border-white/10 bg-white/[0.02] p-5">
-            <div className="flex items-center gap-1.5 mb-2 text-amber-400">
+            <div className="flex items-center gap-1.5 mb-2 text-[#FFE600]">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} size={16} />
               ))}
@@ -38,10 +38,10 @@ export default function TestimonialsSection() {
               className="card card-hover p-7 sm:p-8 flex flex-col justify-between gap-8"
             >
               <div>
-                <div className="w-10 h-10 rounded-full bg-[#E10600]/12 border border-[#E10600]/30 flex items-center justify-center text-[#ff5a52] font-display text-xl leading-none mb-5">
+                <div className="w-10 h-10 rounded-full bg-[#FFE600]/12 border border-[#FFE600]/30 flex items-center justify-center text-[#FFE600] font-display text-xl leading-none mb-5">
                   &ldquo;
                 </div>
-                <div className="text-[11px] font-bold uppercase text-[#ff5a52] tracking-[0.14em] mb-3">
+                <div className="text-[11px] font-bold uppercase text-[#FFE600] tracking-[0.14em] mb-3">
                   {item.highlight}
                 </div>
                 <blockquote className="text-[15px] sm:text-[16px] text-zinc-200 font-light leading-relaxed">

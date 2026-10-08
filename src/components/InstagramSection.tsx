@@ -10,7 +10,7 @@ export default function InstagramSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10">
           <div>
             <div className="eyebrow-pill mb-5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#E10600]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FFE600]" />
               <span className="label-caps text-[11px] text-zinc-300">Social archive // @strengthlabofficial</span>
             </div>
             <h2 className="section-title text-white font-display">
@@ -24,7 +24,7 @@ export default function InstagramSection() {
             rel="noopener noreferrer"
             className="btn-ghost rounded-full inline-flex items-center gap-2 px-6 py-3.5 text-[12px] font-bold uppercase tracking-[0.14em] text-white group w-fit"
           >
-            <Instagram size={16} className="text-[#ff5a52]" />
+            <Instagram size={16} className="text-[#FFE600]" />
             <span>Follow the lab</span>
             <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
@@ -58,7 +58,7 @@ export default function InstagramSection() {
                 </p>
                 <div className="mt-2.5 flex items-center justify-between text-[10px] font-bold text-zinc-400 uppercase tracking-[0.12em]">
                   <span>{post.likes} likes</span>
-                  <span className="text-[#ff5a52]">View →</span>
+                  <span className="text-[#FFE600] font-semibold">View →</span>
                 </div>
               </div>
             </a>

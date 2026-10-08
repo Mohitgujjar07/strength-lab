@@ -21,12 +21,12 @@ export default function CtaBanner({ onOpenEnquiry }: CtaBannerProps) {
           className="img-treatment object-cover object-center opacity-35"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#080808] via-[#080808]/70 to-[#080808]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[640px] h-[320px] bg-[#E10600]/20 blur-[130px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[640px] h-[320px] bg-[#FFE600]/15 blur-[140px] rounded-full pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-8 text-center">
         <div className="eyebrow-pill mb-7">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#E10600]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#FFE600]" />
           <span className="label-caps text-[11px] text-zinc-200">
             Strength Lab // Tumakuru · Karnataka
           </span>
@@ -34,7 +34,7 @@ export default function CtaBanner({ onOpenEnquiry }: CtaBannerProps) {
 
         <h2 className="font-display text-[2.8rem] sm:text-7xl lg:text-[5.2rem] text-white leading-[0.92] uppercase">
           YOUR STRONGEST<br />
-          <span className="text-[#E10600]">VERSION</span><br />
+          <span className="text-[#FFE600]">VERSION</span><br />
           STARTS HERE.
         </h2>
 
@@ -45,7 +45,7 @@ export default function CtaBanner({ onOpenEnquiry }: CtaBannerProps) {
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 max-w-xl mx-auto">
           <button
             onClick={onOpenEnquiry}
-            className="btn-primary rounded-full flex-1 inline-flex items-center justify-center gap-3 px-8 py-4 text-white text-[13px] font-bold uppercase tracking-[0.18em]"
+            className="btn-primary rounded-full flex-1 inline-flex items-center justify-center gap-3 px-8 py-4 text-black text-[13px] font-extrabold uppercase tracking-[0.18em]"
           >
             <span>Start your journey</span>
             <ArrowRight size={16} />

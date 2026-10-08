@@ -31,7 +31,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#080808] text-[#F5F5F5] selection:bg-[#E10600] selection:text-white">
+    <div className="relative min-h-screen bg-[#070707] text-[#F5F5F5] selection:bg-[#FFE600] selection:text-black">
       {/* Fixed Navigation */}
       <Navbar onOpenEnquiry={handleOpenEnquiry} />
 

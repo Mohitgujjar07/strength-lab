@@ -67,7 +67,7 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
 
         {submitted ? (
           <div className="py-12 text-center animate-fadeIn">
-            <div className="w-16 h-16 rounded-full bg-[#E10600]/15 border border-[#E10600]/50 text-[#ff5a52] flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 rounded-full bg-[#FFE600]/15 border border-[#FFE600]/50 text-[#FFE600] flex items-center justify-center mx-auto mb-6 shadow-[0_0_25px_rgba(255,230,0,0.3)]">
               <Check size={30} />
             </div>
             <h3 className="font-display text-[1.9rem] text-white leading-none mb-2">
@@ -81,7 +81,7 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
           <>
             <div className="mb-7 pr-10">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-300 mb-4">
-                <span className="w-1.5 h-1.5 bg-[#E10600] rounded-full" />
+                <span className="w-1.5 h-1.5 bg-[#FFE600] rounded-full" />
                 Membership & visit inquiry
               </div>
               <h3 className="font-display text-[2.1rem] sm:text-4xl text-white leading-none">
@@ -128,7 +128,7 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                   placeholder="Enter your name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full rounded-xl bg-[#1d1d1d] border border-white/10 px-4 py-3.5 text-[14px] text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#E10600] focus:ring-2 focus:ring-[#E10600]/30 transition"
+                  className="w-full rounded-xl bg-[#1d1d1d] border border-white/10 px-4 py-3.5 text-[14px] text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#FFE600] focus:ring-2 focus:ring-[#FFE600]/30 transition"
                 />
               </div>
 
@@ -145,7 +145,7 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                   placeholder="10-digit mobile number"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full rounded-xl bg-[#1d1d1d] border border-white/10 px-4 py-3.5 text-[14px] text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#E10600] focus:ring-2 focus:ring-[#E10600]/30 transition"
+                  className="w-full rounded-xl bg-[#1d1d1d] border border-white/10 px-4 py-3.5 text-[14px] text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#FFE600] focus:ring-2 focus:ring-[#FFE600]/30 transition"
                 />
               </div>
 
@@ -157,7 +157,7 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                   id="enq-goal"
                   value={formData.goal}
                   onChange={(e) => setFormData({ ...formData, goal: e.target.value })}
-                  className="w-full rounded-xl bg-[#1d1d1d] border border-white/10 px-4 py-3.5 text-[14px] text-white focus:outline-none focus:border-[#E10600] focus:ring-2 focus:ring-[#E10600]/30 transition"
+                  className="w-full rounded-xl bg-[#1d1d1d] border border-white/10 px-4 py-3.5 text-[14px] text-white focus:outline-none focus:border-[#FFE600] focus:ring-2 focus:ring-[#FFE600]/30 transition"
                 >
                   <option value="Strength & Muscle Building">Strength & Muscle Building</option>
                   <option value="CrossFit & Functional Fitness">CrossFit & Functional Fitness</option>
@@ -168,12 +168,12 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
               </div>
 
               {error && (
-                <p className="text-[13px] text-[#ff7a73] bg-[#E10600]/10 border border-[#E10600]/30 rounded-xl px-4 py-3">{error}</p>
+                <p className="text-[13px] text-red-400 bg-red-950/40 border border-red-500/30 rounded-xl px-4 py-3">{error}</p>
               )}
 
               <button
                 type="submit"
-                className="btn-primary rounded-full w-full py-4 px-6 text-white font-bold text-[12px] uppercase tracking-[0.18em] flex items-center justify-center gap-2"
+                className="btn-primary rounded-full w-full py-4 px-6 text-black font-extrabold text-[12px] uppercase tracking-[0.18em] flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,230,0,0.35)]"
               >
                 <span>Send inquiry via WhatsApp</span>
                 <ArrowRight size={14} />

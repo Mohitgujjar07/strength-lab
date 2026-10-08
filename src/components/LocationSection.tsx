@@ -11,7 +11,7 @@ export default function LocationSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10">
           <div>
             <div className="eyebrow-pill mb-5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#E10600]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FFE600]" />
               <span className="label-caps text-[11px] text-zinc-300">Headquarters // Visit & directions</span>
             </div>
             <h2 className="section-title text-white font-display">
@@ -26,7 +26,7 @@ export default function LocationSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5 items-stretch">
           <div className="lg:col-span-5 card p-7 sm:p-9 flex flex-col justify-between gap-8">
             <div>
-              <div className="text-[11px] font-bold text-[#ff5a52] uppercase tracking-[0.18em] mb-2">
+              <div className="text-[11px] font-bold text-[#FFE600] uppercase tracking-[0.18em] mb-2">
                 Physical presence
               </div>
               <h3 className="font-display text-[2rem] sm:text-4xl text-white leading-none mb-6">
@@ -35,8 +35,8 @@ export default function LocationSection() {
 
               <div className="space-y-5 text-[14px] text-zinc-300">
                 <div className="flex items-start gap-3">
-                  <span className="w-9 h-9 rounded-full bg-[#E10600]/12 border border-[#E10600]/30 flex items-center justify-center shrink-0">
-                    <MapPin size={16} className="text-[#ff5a52]" />
+                  <span className="w-9 h-9 rounded-full bg-[#FFE600]/12 border border-[#FFE600]/30 flex items-center justify-center shrink-0">
+                    <MapPin size={16} className="text-[#FFE600]" />
                   </span>
                   <div className="leading-relaxed">
                     <strong className="text-white block font-semibold">KNS Mansion, 2nd Floor</strong>
@@ -127,7 +127,7 @@ export default function LocationSection() {
                 href={siteConfig.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary rounded-full inline-flex items-center gap-2 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.14em] text-white whitespace-nowrap"
+                className="btn-primary rounded-full inline-flex items-center gap-2 px-5 py-3 text-[11px] font-extrabold uppercase tracking-[0.14em] text-black whitespace-nowrap"
               >
                 <span>Open live navigation</span>
                 <span aria-hidden>→</span>

@@ -1,19 +1,33 @@
 import React from 'react';
+import Image from 'next/image';
 import { siteConfig } from '@/data/site';
 import { Instagram, Phone, MessageCircle, MapPin } from './Icons';
 
 export default function Footer() {
   return (
     <footer className="relative bg-[#060606] border-t border-white/10 text-white pt-16 sm:pt-20 pb-28 md:pb-10 overflow-hidden">
-      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[200px] bg-[#E10600]/[0.07] blur-[110px] rounded-full pointer-events-none" />
+      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[200px] bg-[#FFE600]/[0.05] blur-[110px] rounded-full pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-5 sm:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
           <div className="md:col-span-5">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="font-display text-[1.7rem] tracking-tight text-white leading-none">
-                STRENGTH<span className="text-[#E10600]">LAB</span>
-              </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#E10600]" />
+            <div className="flex items-center gap-3 mb-4">
+              <div className="relative w-11 h-11 rounded-full overflow-hidden border border-[#FFE600]/40 shadow-[0_0_15px_rgba(255,230,0,0.25)] shrink-0 bg-black">
+                <Image
+                  src="/logo.png"
+                  alt="Strength Lab Logo"
+                  fill
+                  sizes="44px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-display text-[1.7rem] tracking-tight text-white leading-none">
+                  STRENGTH<span className="text-[#FFE600]">LAB</span>
+                </span>
+                <span className="text-[9px] font-mono tracking-[0.22em] text-[#FFE600] uppercase font-bold mt-0.5">
+                  Tumakuru · Karnataka
+                </span>
+              </div>
             </div>
             <p className="text-zinc-400 text-[14px] max-w-sm leading-relaxed mb-5">
               Tumakuru&apos;s premier 13,000 sq. ft. athletic training facility. Strength equipment, rooftop turf, and professional recovery.
@@ -52,7 +66,7 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-3">
-            <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#ff5a52] mb-5">
+            <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#FFE600] mb-5">
               Explore the lab
             </div>
             <ul className="grid grid-cols-2 md:grid-cols-1 gap-x-4 gap-y-3 text-sm">
@@ -70,12 +84,12 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-4 rounded-3xl border border-white/10 bg-white/[0.02] p-6 sm:p-7">
-            <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#ff5a52] mb-4">
+            <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#FFE600] mb-4">
               Headquarters
             </div>
             <div className="space-y-3 text-[13px] text-zinc-400 leading-relaxed">
               <div className="flex items-start gap-2.5">
-                <MapPin size={16} className="text-[#E10600] shrink-0 mt-0.5" />
+                <MapPin size={16} className="text-[#FFE600] shrink-0 mt-0.5" />
                 <span>
                   KNS Mansion, 2nd Floor, B.H. Road, Shankarapuram, Tumakuru, Karnataka 572102
                 </span>
