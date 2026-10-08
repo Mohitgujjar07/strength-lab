@@ -11,12 +11,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
           <div className="md:col-span-5">
             <div className="flex items-center gap-3 mb-4">
-              <div className="relative w-11 h-11 rounded-full overflow-hidden border border-[#FFE600]/40 shadow-[0_0_15px_rgba(255,230,0,0.25)] shrink-0 bg-black">
+              <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden drop-shadow-[0_0_20px_rgba(255,230,0,0.45)] shrink-0 bg-black">
                 <Image
                   src="/logo.png"
                   alt="Strength Lab Logo"
                   fill
-                  sizes="44px"
+                  unoptimized
                   className="object-cover"
                 />
               </div>

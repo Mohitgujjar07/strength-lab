@@ -61,14 +61,14 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
             {/* Brand Logo with Official Badge */}
             <Link
               href="/"
-              className="group flex items-center gap-3 focus:outline-none"
+              className="group flex items-center gap-3.5 focus:outline-none"
             >
-              <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border-2 border-[#FFE600] logo-glow shrink-0">
+              <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden drop-shadow-[0_0_18px_rgba(255,230,0,0.5)] shrink-0 bg-black">
                 <Image
                   src="/logo.png"
                   alt="Strength Lab Official Logo"
                   fill
-                  sizes="44px"
+                  unoptimized
                   priority
                   className="object-cover"
                 />
@@ -80,7 +80,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                   </span>
                   <span className="inline-block w-2 h-2 rounded-full bg-[#FFE600] animate-pulse" />
                 </div>
-                <span className="label-caps text-[9px] text-[#FFE600] tracking-widest -mt-1 hidden sm:block">
+                <span className="label-caps text-[9px] text-[#FFE600] tracking-widest -mt-0.5 hidden sm:block font-bold">
                   TUMAKURU · 13,000 SQ. FT.
                 </span>
               </div>
@@ -147,19 +147,20 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-[#070707]/98 backdrop-blur-xl lg:hidden flex flex-col justify-between pt-28 pb-10 px-6 animate-fadeIn">
           <div className="flex flex-col gap-6">
-            <div className="flex items-center gap-3 pb-4 border-b border-white/[0.08]">
-              <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#FFE600] logo-glow">
+            <div className="flex items-center gap-3.5 pb-4 border-b border-white/[0.08]">
+              <div className="relative w-14 h-14 rounded-full overflow-hidden drop-shadow-[0_0_20px_rgba(255,230,0,0.5)] shrink-0 bg-black">
                 <Image
                   src="/logo.png"
                   alt="Strength Lab Logo"
                   fill
-                  sizes="48px"
+                  unoptimized
+                  priority
                   className="object-cover"
                 />
               </div>
               <div>
-                <div className="font-display text-xl text-white">STRENGTH LAB</div>
-                <div className="text-[10px] tracking-widest text-[#FFE600] font-mono">TUMAKURU, KARNATAKA</div>
+                <div className="font-display text-2xl text-white">STRENGTH LAB</div>
+                <div className="text-[10px] tracking-widest text-[#FFE600] font-mono font-bold">TUMAKURU, KARNATAKA</div>
               </div>
             </div>
 

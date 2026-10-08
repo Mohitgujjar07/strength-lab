@@ -56,12 +56,13 @@ export default function BrandStatement() {
             <div className="pt-6">
               <div className="p-4 bg-[#121212] border border-[#FFE600]/20 flex items-center justify-between">
                 <div className="flex items-center gap-3.5">
-                  <div className="relative w-10 h-10 rounded-full overflow-hidden border border-[#FFE600] shrink-0">
+                  <div className="relative w-14 h-14 rounded-full overflow-hidden drop-shadow-[0_0_18px_rgba(255,230,0,0.45)] shrink-0 bg-black">
                     <Image
                       src="/logo.png"
                       alt="Strength Lab Emblem"
                       fill
-                      sizes="40px"
+                      unoptimized
+                      priority
                       className="object-cover"
                     />
                   </div>

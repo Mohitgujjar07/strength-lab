@@ -47,15 +47,27 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 my-auto">
         <div className="max-w-5xl">
           {/* Eyebrow & Brand Badge Row */}
-          <div className="flex flex-wrap items-center gap-3 mb-6 sm:mb-8">
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-black/60 border border-[#FFE600]/30 backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-[#FFE600] animate-pulse" />
-              <span className="label-caps text-[11px] sm:text-xs text-zinc-200 tracking-[0.25em]">
-                {siteConfig.hero.eyebrow}
-              </span>
+          <div className="flex items-center gap-4 sm:gap-5 mb-6 sm:mb-8">
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden drop-shadow-[0_0_25px_rgba(255,230,0,0.55)] shrink-0 bg-black">
+              <Image
+                src="/logo.png"
+                alt="Strength Lab Official HD Emblem"
+                fill
+                unoptimized
+                priority
+                className="object-cover"
+              />
             </div>
-            <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 bg-white/[0.04] border border-white/10 text-xs font-mono text-[#FFE600]">
-              <span>★ 13,000 SQ. FT. HIGH-PERFORMANCE LAB</span>
+            <div className="flex flex-col gap-2">
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-black/75 border border-[#FFE600]/40 backdrop-blur-md w-fit">
+                <span className="w-2 h-2 rounded-full bg-[#FFE600] animate-pulse" />
+                <span className="label-caps text-[11px] sm:text-xs text-[#FFE600] tracking-[0.25em] font-bold">
+                  {siteConfig.hero.eyebrow}
+                </span>
+              </div>
+              <div className="text-[11px] sm:text-xs font-mono text-zinc-400 uppercase tracking-wider">
+                13,000 SQ. FT. HIGH-PERFORMANCE LAB · KNS MANSION, B.H. ROAD
+              </div>
             </div>
           </div>
 
