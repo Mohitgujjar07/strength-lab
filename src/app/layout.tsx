@@ -17,6 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://strengthlab.in'),
   title: siteConfig.seo.title,
   description: siteConfig.seo.description,
   keywords: siteConfig.seo.keywords,
@@ -56,7 +57,7 @@ export default function RootLayout({
     image: '/og-image.jpg',
     '@id': 'https://strengthlab.in',
     url: 'https://strengthlab.in',
-    telephone: siteConfig.phone,
+    telephone: siteConfig.contact.phone,
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'KNS Mansion, 2nd Floor, B.H. Road, Shankarapuram',
