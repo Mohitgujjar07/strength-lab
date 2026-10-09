@@ -73,16 +73,11 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                   className="object-cover"
                 />
               </div>
-              <div className="flex flex-col items-start">
-                <div className="flex items-center gap-2">
-                  <span className="font-display text-xl sm:text-2xl tracking-tight text-white transition-colors group-hover:text-[#FFE600]">
-                    STRENGTH LAB
-                  </span>
-                  <span className="inline-block w-2 h-2 rounded-full bg-[#FFE600] animate-pulse" />
-                </div>
-                <span className="label-caps text-[9px] text-[#FFE600] tracking-widest -mt-0.5 hidden sm:block font-bold">
-                  TUMAKURU · KARNATAKA
+              <div className="flex items-center gap-2">
+                <span className="font-display text-xl sm:text-2xl tracking-tight text-white transition-colors group-hover:text-[#FFE600]">
+                  STRENGTH LAB
                 </span>
+                <span className="inline-block w-2 h-2 rounded-full bg-[#FFE600] animate-pulse" />
               </div>
             </Link>
 
