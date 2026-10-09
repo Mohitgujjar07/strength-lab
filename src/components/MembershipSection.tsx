@@ -41,26 +41,28 @@ export default function MembershipSection({ onOpenEnquiry }: MembershipSectionPr
         </div>
 
         {/* 4 Membership Plans Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-5 items-stretch mb-16 pt-5">
           {siteConfig.membershipPlans.map((plan) => {
             const isFeatured = plan.isLimitedOffer || plan.isPopular;
             return (
               <div
                 key={plan.id}
-                className={`relative flex flex-col rounded-3xl p-6 sm:p-7 transition-all duration-300 ${
+                className={`relative flex flex-col rounded-3xl p-6 sm:p-7 pt-7 sm:pt-8 transition-all duration-300 overflow-visible ${
                   plan.isLimitedOffer
                     ? 'bg-gradient-to-b from-[#181607] via-[#121212] to-[#0d0d0d] border-2 border-[#FFE600] shadow-[0_20px_50px_-15px_rgba(255,230,0,0.35)] lg:-translate-y-2'
                     : plan.isPopular
                     ? 'bg-gradient-to-b from-[#161616] to-[#0e0e0e] border border-[#FFE600]/40 shadow-xl'
-                    : 'card hover:border-white/20'
+                    : 'bg-gradient-to-b from-[#121212] to-[#0a0a0a] border border-white/[0.09] hover:border-white/20'
                 }`}
               >
                 {/* Top Badge */}
                 {plan.badge && (
                   <div
-                    className={`absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-[0.16em] shadow-lg flex items-center gap-1.5 ${
+                    className={`absolute -top-3.5 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap px-4 py-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-[0.16em] shadow-xl flex items-center gap-1.5 ring-2 ring-[#080808] ${
                       plan.isLimitedOffer
                         ? 'bg-[#FFE600] text-black shadow-[0_0_20px_rgba(255,230,0,0.5)]'
+                        : plan.isPopular
+                        ? 'bg-[#FFE600] text-black shadow-[0_0_15px_rgba(255,230,0,0.3)]'
                         : 'bg-white text-black'
                     }`}
                   >
