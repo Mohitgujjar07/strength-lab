@@ -61,11 +61,17 @@ export interface Testimonial {
 export interface MembershipPlan {
   id: string;
   name: string;
+  duration: string;
+  price: string;
+  period: string;
+  equivalentMonthly?: string;
+  savingsBadge?: string;
   badge?: string;
   tagline: string;
   features: string[];
   ctaText: string;
   isPopular?: boolean;
+  isLimitedOffer?: boolean;
 }
 
 export interface InstagramPost {
@@ -118,6 +124,8 @@ export interface SiteConfig {
     services: string[];
     specialFacilities: string[];
     recovery: string[];
+    includedFeatures?: string[];
+    premiumAddons?: { name: string; desc: string }[];
   };
   navItems: NavItem[];
   hero: {
@@ -161,7 +169,7 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   name: 'STRENGTH LAB',
   tagline: 'BUILT DIFFERENT.',
-  subTagline: 'Tumakuru’s Premier High-Performance Strength & Conditioning Club',
+  subTagline: 'Tumakuru’s 1st Luxury Fitness Centre',
   badge: 'EST. TUMAKURU // KARNATAKA',
   location: {
     city: 'Tumakuru',
@@ -181,7 +189,7 @@ export const siteConfig: SiteConfig = {
     phone: '+917996855559',
     phoneDisplay: '+91 79968 55559',
     whatsappNumber: '917996855559',
-    whatsappMessage: "Hi Strength Lab, I'm interested in joining the gym. I'd like to schedule a visit and know more about membership options.",
+    whatsappMessage: "Hi Strength Lab, I'm interested in joining the gym. I'd like to book a visit and know more about the membership plans.",
     whatsappUrl: '',
     email: 'info@strengthlab.in',
   },
@@ -194,14 +202,35 @@ export const siteConfig: SiteConfig = {
   facility: {
     size: '13,000+ sq. ft.',
     services: [
-      'Strength & Conditioning',
+      'Certified Trainers',
       'CrossFit',
-      'HIIT Training',
-      'Personal Training',
-      'Gym & Cardio',
+      'HIIT',
+      'Strength & Conditioning',
+      'Functional Training',
+      'Mobility Training',
+      'Steam Bath',
+      'Shower Facilities',
+      'Nutrition Guidance',
     ],
-    specialFacilities: ['Rooftop Turf', 'Pickleball Court', 'Nutrition Café'],
-    recovery: ['Ice Baths', 'Infrared Saunas', 'Steam Baths'],
+    specialFacilities: ['Turf Ground', 'Pickleball Court', 'Steam Bath & Showers'],
+    recovery: ['Steam Bath (Included)', 'Sauna (Add-on)', 'Ice Bath (Add-on)'],
+    includedFeatures: [
+      'Certified Trainers',
+      'CrossFit',
+      'HIIT',
+      'Strength & Conditioning',
+      'Functional Training',
+      'Mobility Training',
+      'Steam Bath',
+      'Shower Facilities',
+      'Nutrition Guidance',
+    ],
+    premiumAddons: [
+      { name: 'Sauna', desc: 'Infrared & traditional heat therapy for cellular detox & circulation' },
+      { name: 'Ice Bath', desc: 'Sub-zero cold plunge contrast therapy for rapid muscular recovery' },
+      { name: 'Pickleball Court', desc: 'Regulation rooftop court access for social & athletic match play' },
+      { name: 'Turf Ground', desc: 'High-traction surface for sled pushes, sprints & conditioning' },
+    ],
   },
   navItems: [
     { label: 'THE LAB', href: '#the-lab' },
@@ -213,9 +242,9 @@ export const siteConfig: SiteConfig = {
     { label: 'CONTACT', href: '#contact' },
   ],
   hero: {
-    eyebrow: 'STRENGTH LAB — TUMAKURU, KARNATAKA',
+    eyebrow: 'TUMAKURU’S 1ST LUXURY FITNESS CENTRE',
     headline: ['BUILT', 'DIFFERENT.'],
-    subheadline: 'A place for people who take their strength, performance and progress seriously. Elite competition equipment, open-sky rooftop turf, and advanced contrast recovery.',
+    subheadline: 'Welcome to Strength Lab – Tumakuru’s 1st Luxury Fitness Centre. Competition-grade strength equipment, certified coaches, steam bath, and world-class athletic training zones.',
     ctaPrimary: 'START YOUR JOURNEY',
     ctaSecondary: 'EXPLORE THE LAB',
     locationLeft: 'TUMAKURU · KARNATAKA',
@@ -430,48 +459,89 @@ export const siteConfig: SiteConfig = {
   ],
   membershipPlans: [
     {
-      id: 'discovery-day-pass',
-      name: 'LAB DISCOVERY PASS',
-      badge: 'FIRST EXPERIENCE',
-      tagline: 'Experience the facility and full equipment before committing.',
+      id: 'monthly',
+      name: 'MONTHLY',
+      duration: '1 Month',
+      price: '₹2,600',
+      period: '/ month',
+      equivalentMonthly: 'Flexible monthly billing',
+      badge: 'FLEXIBLE',
+      tagline: 'Complete access to gym floor, classes and amenities with zero lock-in commitment.',
       features: [
-        'Full Day Access to the Training Floor',
-        'Access to Free Weights, Racks & Cardio',
-        'Rooftop Functional Turf Access',
-        'Introductory Movement & Form Consultation',
+        'Certified Trainers Floor Support',
+        'CrossFit & HIIT Training Zones',
+        'Strength & Conditioning Equipment',
+        'Functional & Mobility Training',
+        'Complimentary Steam Bath',
+        'Shower & Locker Facilities',
+        'Nutritional Guidance Advice',
       ],
-      ctaText: 'ENQUIRE FOR PASS',
+      ctaText: 'CHOOSE MONTHLY',
       isPopular: false,
     },
     {
-      id: 'strength-performance',
-      name: 'PERFORMANCE ACCESS',
-      badge: 'MOST POPULAR',
-      tagline: 'Complete access to the gym, rooftop turf, and functional training zones.',
+      id: '100-days',
+      name: '100 DAYS',
+      duration: '100 Days',
+      price: '₹6,200',
+      period: '/ 100 days',
+      equivalentMonthly: 'Only ~₹62 / day',
+      savingsBadge: 'SAVE ₹2,460',
+      badge: 'RECOMP CHALLENGE',
+      tagline: 'The proven time window for serious body recomposition, muscle building and habit discipline.',
       features: [
-        'Unlimited Access to Main Lifting Floor',
-        'Rooftop Functional Turf & Sled Track',
-        'Pickleball Court Access (Scheduled slots)',
-        'Locker & Shower Facility',
-        'Exclusive Member Community Access',
+        'All Core Training Disciplines',
+        'CrossFit, HIIT & Functional Training',
+        'Structured 100-Day Recomp Blueprint',
+        'Steam Bath & Shower Amenities',
+        'Bi-Weekly Body Metric Check-ins',
+        'Dedicated Coach Form Correction',
       ],
-      ctaText: 'DISCUSS ON WHATSAPP',
+      ctaText: 'START 100 DAYS',
+      isPopular: false,
+    },
+    {
+      id: '6-months',
+      name: '6 MONTHS',
+      duration: '6 Months',
+      price: '₹9,200',
+      period: '/ 6 months',
+      equivalentMonthly: 'Just ₹1,533 / month',
+      savingsBadge: 'SAVE ₹6,400',
+      badge: 'MOST POPULAR',
+      tagline: 'Half-year progressive overload journey for committed athletes seeking visible physical changes.',
+      features: [
+        'Unrestricted 6-Month Floor Access',
+        'All Disciplines (CrossFit, HIIT, S&C)',
+        'Continuous Nutrition Guidance Blueprint',
+        'Daily Steam Bath & Shower Amenities',
+        'Certified Trainers Guidance on Every Session',
+        'Special Member Rates on Sauna & Ice Bath Add-ons',
+      ],
+      ctaText: 'CHOOSE 6 MONTHS',
       isPopular: true,
     },
     {
-      id: 'elite-recovery',
-      name: 'ELITE LAB & RECOVERY',
-      badge: 'FULL PROTOCOL',
-      tagline: 'The ultimate training and contrast recovery package for dedicated athletes.',
+      id: 'annual',
+      name: 'ANNUAL PASS',
+      duration: '12 Months',
+      price: '₹12,500',
+      period: '/ year',
+      equivalentMonthly: 'Unbeatable ₹1,041 / month',
+      savingsBadge: 'SAVE ₹18,700',
+      badge: 'LIMITED-TIME OFFER',
+      tagline: 'Tumakuru’s 1st luxury fitness experience at the absolute best value. Limited-time pricing.',
       features: [
-        'All Performance Access Inclusions',
-        'Dedicated Recovery Lab (Ice Bath & Sauna)',
-        'Priority 1-on-1 Trainer Assessment',
-        'Personalized Macro & Nutrition Blueprint',
-        'Discounts at Performance Fuel Café',
+        'Unlimited 365-Day Access to Strength Lab',
+        'Full Access to CrossFit, HIIT, Mobility & S&C',
+        'Daily Steam Bath & Luxury Showers Included',
+        'Certified Coaches Floor Guidance All Year',
+        'Comprehensive Nutrition & Macro Support',
+        'Priority Access & Discounts on Sauna, Ice Bath & Turf',
       ],
-      ctaText: 'REQUEST ELITE ACCESS',
-      isPopular: false,
+      ctaText: 'CLAIM ANNUAL OFFER',
+      isPopular: true,
+      isLimitedOffer: true,
     },
   ],
   instagramFeed: [
@@ -518,8 +588,12 @@ export const siteConfig: SiteConfig = {
       answer: 'Absolutely. "Built Different" is about your mindset and commitment to progress, not your starting point. Our certified coaches provide movement assessments and structured guidance for lifters of all levels.',
     },
     {
+      question: 'What are the membership plans and fees at Strength Lab?',
+      answer: 'We offer four transparent membership tiers: Monthly (₹2,600), 100 Days Challenge (₹6,200), 6 Months (₹9,200), and our limited-time Annual Offer (₹12,500 – unbeatable at ₹1,041/month). Every membership includes Certified Trainers, CrossFit, HIIT, Strength & Conditioning, Functional & Mobility Training, Steam Bath, Shower Facilities, and Nutrition Guidance. Premium facilities including Sauna, Ice Bath, Pickleball Court, and Turf Ground are available at additional charges.',
+    },
+    {
       question: 'How do I inquire about membership or schedule a tour?',
-      answer: 'You can tap the WhatsApp or Call button directly on this website. Our team will promptly share membership options and arrange a personalized facility walkthrough.',
+      answer: 'You can tap the WhatsApp or Call button (7996855559) directly on this website, or drop your contact number in the enquiry form. Our team will get in touch with you shortly and arrange your facility walkthrough.',
     },
   ],
   seo: {

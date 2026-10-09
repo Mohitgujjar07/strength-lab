@@ -21,8 +21,10 @@ import EnquiryModal from '@/components/EnquiryModal';
 
 export default function Home() {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<string>('');
 
-  const handleOpenEnquiry = () => {
+  const handleOpenEnquiry = (plan?: string) => {
+    if (plan) setSelectedPlan(plan);
     setEnquiryOpen(true);
   };
 
@@ -83,7 +85,7 @@ export default function Home() {
       <MobileStickyCta onOpenEnquiry={handleOpenEnquiry} />
 
       {/* Inquiry Dialog Modal */}
-      <EnquiryModal isOpen={enquiryOpen} onClose={handleCloseEnquiry} />
+      <EnquiryModal isOpen={enquiryOpen} onClose={handleCloseEnquiry} initialPlan={selectedPlan} />
     </div>
   );
 }

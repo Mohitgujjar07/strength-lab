@@ -7,16 +7,24 @@ import { X, MessageCircle, Phone, ArrowRight, Check } from './Icons';
 interface EnquiryModalProps {
   isOpen: boolean;
   onClose: () => void;
+  initialPlan?: string;
 }
 
-export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
+export default function EnquiryModal({ isOpen, onClose, initialPlan }: EnquiryModalProps) {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    goal: 'Strength & Muscle Building',
+    plan: initialPlan || 'Annual Pass (₹12,500 – Limited Offer)',
+    goal: 'Strength & Conditioning',
   });
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
+
+  useEffect(() => {
+    if (initialPlan) {
+      setFormData((prev) => ({ ...prev, plan: initialPlan }));
+    }
+  }, [initialPlan]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -41,7 +49,7 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
       return;
     }
     setError('');
-    const customMessage = `Hi Strength Lab, my name is ${formData.name.trim() || 'Athlete'} (Phone: ${digits}). My primary fitness goal is: ${formData.goal}. I'd like to book a visit and check membership options.`;
+    const customMessage = `Hi Strength Lab, my name is ${formData.name.trim() || 'Athlete'} (Phone: ${digits}). I am interested in joining: ${formData.plan}. Focus area: ${formData.goal}. Please get in touch with me and schedule my visit.`;
     const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(customMessage)}`;
 
     setSubmitted(true);
@@ -71,46 +79,48 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
               <Check size={30} />
             </div>
             <h3 className="font-display text-[1.9rem] text-white leading-none mb-2">
-              OPENING WHATSAPP…
+              CONNECTING TO TEAM…
             </h3>
             <p className="text-sm text-zinc-400">
-              Connecting you with the coaching team now.
+              Opening WhatsApp with your membership details.
             </p>
           </div>
         ) : (
           <>
-            <div className="mb-7 pr-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-300 mb-4">
+            <div className="mb-6 pr-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-300 mb-3">
                 <span className="w-1.5 h-1.5 bg-[#FFE600] rounded-full" />
-                Membership & visit inquiry
+                Tumakuru’s 1st Luxury Fitness Centre
               </div>
               <h3 className="font-display text-[2.1rem] sm:text-4xl text-white leading-none">
                 JOIN THE LAB.
               </h3>
               <p className="text-zinc-400 text-[13px] mt-2 leading-relaxed">
-                KNS Mansion, 2nd Floor, B.H. Road, Tumakuru. We reply fast on WhatsApp.
+                Please share your contact number, and our team will get in touch with you shortly.
               </p>
             </div>
 
             <div className="mb-5 p-4 rounded-2xl bg-white/[0.03] border border-white/10">
               <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.14em] mb-2.5">
-                Fastest response // Direct on WhatsApp
+                Immediate Assistance // Direct WhatsApp
               </div>
               <a
-                href={siteConfig.contact.whatsappUrl}
+                href={`https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(
+                  "Hi Strength Lab, I'm interested in joining the gym. Please share membership details with me."
+                )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3.5 px-4 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-black font-bold text-[12px] uppercase tracking-[0.12em] flex items-center justify-center gap-2 transition-colors"
+                className="w-full py-3.5 px-4 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-black font-extrabold text-[12px] uppercase tracking-[0.12em] flex items-center justify-center gap-2 transition-colors shadow-[0_0_15px_rgba(37,211,102,0.3)]"
               >
                 <MessageCircle size={16} />
-                <span>Open instant WhatsApp chat</span>
+                <span>Instant WhatsApp: 7996855559</span>
               </a>
             </div>
 
             <div className="relative flex items-center justify-center my-5">
               <div className="border-t border-white/10 w-full" />
               <span className="bg-[#141414] px-3 text-[10px] font-bold text-zinc-500 uppercase tracking-[0.14em] whitespace-nowrap">
-                Or fill details below
+                Or submit callback request
               </span>
               <div className="border-t border-white/10 w-full" />
             </div>
@@ -134,7 +144,7 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
 
               <div>
                 <label htmlFor="enq-phone" className="block text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-400 mb-1.5">
-                  Phone number
+                  Phone number (Required)
                 </label>
                 <input
                   id="enq-phone"
@@ -150,8 +160,26 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
               </div>
 
               <div>
+                <label htmlFor="enq-plan" className="block text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-400 mb-1.5">
+                  Interested Membership Plan
+                </label>
+                <select
+                  id="enq-plan"
+                  value={formData.plan}
+                  onChange={(e) => setFormData({ ...formData, plan: e.target.value })}
+                  className="w-full rounded-xl bg-[#1d1d1d] border border-white/10 px-4 py-3.5 text-[14px] text-white focus:outline-none focus:border-[#FFE600] focus:ring-2 focus:ring-[#FFE600]/30 transition"
+                >
+                  <option value="Annual Pass (₹12,500 – Limited Offer)">Annual Pass (₹12,500 – Limited-Time Offer)</option>
+                  <option value="6 Months Plan (₹9,200)">6 Months Plan (₹9,200)</option>
+                  <option value="100 Days Challenge (₹6,200)">100 Days Challenge (₹6,200)</option>
+                  <option value="Monthly Plan (₹2,600)">Monthly Plan (₹2,600)</option>
+                  <option value="Facility Tour / Discovery Visit">Facility Tour / Discovery Visit</option>
+                </select>
+              </div>
+
+              <div>
                 <label htmlFor="enq-goal" className="block text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-400 mb-1.5">
-                  Primary focus / goal
+                  Primary training discipline
                 </label>
                 <select
                   id="enq-goal"
@@ -159,11 +187,12 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                   onChange={(e) => setFormData({ ...formData, goal: e.target.value })}
                   className="w-full rounded-xl bg-[#1d1d1d] border border-white/10 px-4 py-3.5 text-[14px] text-white focus:outline-none focus:border-[#FFE600] focus:ring-2 focus:ring-[#FFE600]/30 transition"
                 >
-                  <option value="Strength & Muscle Building">Strength & Muscle Building</option>
-                  <option value="CrossFit & Functional Fitness">CrossFit & Functional Fitness</option>
-                  <option value="HIIT & Fat Loss">HIIT & Fat Loss</option>
-                  <option value="1-on-1 Personal Coaching">1-on-1 Personal Coaching</option>
-                  <option value="Rooftop Turf & Recovery Access">Rooftop Turf & Recovery Access</option>
+                  <option value="Strength & Conditioning">Strength & Conditioning</option>
+                  <option value="CrossFit & Functional Training">CrossFit & Functional Training</option>
+                  <option value="HIIT & Cardio Fat Loss">HIIT & Cardio Fat Loss</option>
+                  <option value="Mobility & Recovery">Mobility & Recovery</option>
+                  <option value="Steam Bath & Add-on Contrast Recovery">Steam Bath & Add-on Contrast Recovery</option>
+                  <option value="Pickleball & Turf Ground">Pickleball & Turf Ground</option>
                 </select>
               </div>
 
@@ -175,7 +204,7 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                 type="submit"
                 className="btn-primary rounded-full w-full py-4 px-6 text-black font-extrabold text-[12px] uppercase tracking-[0.18em] flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,230,0,0.35)]"
               >
-                <span>Send inquiry via WhatsApp</span>
+                <span>Submit & Connect on WhatsApp</span>
                 <ArrowRight size={14} />
               </button>
             </form>
@@ -185,8 +214,8 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                 href={`tel:${siteConfig.contact.phone}`}
                 className="inline-flex items-center gap-2 text-[12px] font-medium text-zinc-400 hover:text-white transition-colors"
               >
-                <Phone size={13} />
-                <span>Prefer a call? {siteConfig.contact.phoneDisplay}</span>
+                <Phone size={13} className="text-[#FFE600]" />
+                <span>Call Desk: {siteConfig.contact.phoneDisplay}</span>
               </a>
             </div>
           </>
