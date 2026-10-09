@@ -57,11 +57,11 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-6 lg:gap-10">
             {/* Brand Logo with Official Badge */}
             <Link
               href="/"
-              className="group flex items-center gap-3.5 focus:outline-none"
+              className="group flex items-center gap-3.5 focus:outline-none shrink-0 mr-4 lg:mr-8 xl:mr-12"
             >
               <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden drop-shadow-[0_0_18px_rgba(255,230,0,0.5)] shrink-0 bg-black">
                 <Image
@@ -73,22 +73,19 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                   className="object-cover"
                 />
               </div>
-              <div className="flex items-center gap-2">
-                <span className="font-display text-xl sm:text-2xl tracking-tight text-white transition-colors group-hover:text-[#FFE600]">
-                  STRENGTH LAB
-                </span>
-                <span className="inline-block w-2 h-2 rounded-full bg-[#FFE600] animate-pulse" />
-              </div>
+              <span className="font-display text-xl sm:text-2xl tracking-tight text-white transition-colors group-hover:text-[#FFE600] whitespace-nowrap">
+                STRENGTH LAB
+              </span>
             </Link>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-8">
+            <nav className="hidden lg:flex items-center gap-4 xl:gap-7 2xl:gap-8 flex-1 justify-center">
               {siteConfig.navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-xs uppercase tracking-[0.2em] font-medium text-zinc-300 hover:text-white transition-colors relative py-1 group"
+                  className="text-[11px] xl:text-xs uppercase tracking-[0.16em] xl:tracking-[0.2em] font-medium text-zinc-300 hover:text-white transition-colors relative py-1 group whitespace-nowrap shrink-0"
                 >
                   {item.label}
                   <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#FFE600] transition-all duration-300 group-hover:w-full" />
@@ -97,7 +94,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
             </nav>
 
             {/* Action Buttons */}
-            <div className="hidden sm:flex items-center gap-4">
+            <div className="hidden sm:flex items-center gap-3.5 shrink-0">
               <a
                 href={siteConfig.contact.whatsappUrl}
                 target="_blank"
