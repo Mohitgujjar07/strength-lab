@@ -81,7 +81,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                   <span className="inline-block w-2 h-2 rounded-full bg-[#FFE600] animate-pulse" />
                 </div>
                 <span className="label-caps text-[9px] text-[#FFE600] tracking-widest -mt-0.5 hidden sm:block font-bold">
-                  TUMAKURU · 13,000 SQ. FT.
+                  TUMAKURU · KARNATAKA
                 </span>
               </div>
             </Link>

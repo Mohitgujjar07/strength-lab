@@ -48,7 +48,7 @@ export default function Home() {
         {/* 4. Training Programs */}
         <TrainingSection onOpenEnquiry={handleOpenEnquiry} />
 
-        {/* 5. 13,000 Sq. Ft. Facility Gallery */}
+        {/* 5. Facility Gallery */}
         <FacilityGallery />
 
         {/* 6. Transformations Before/After Slider */}

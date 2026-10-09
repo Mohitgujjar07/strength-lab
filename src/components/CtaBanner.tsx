@@ -39,7 +39,7 @@ export default function CtaBanner({ onOpenEnquiry }: CtaBannerProps) {
         </h2>
 
         <p className="text-[15px] sm:text-lg text-zinc-300 max-w-xl mx-auto mt-6 mb-9 leading-relaxed">
-          Stop postponing the work. Step inside Tumakuru&apos;s premier 13,000 sq. ft. athletic training facility.
+          Stop postponing the work. Step inside Tumakuru&apos;s premier athletic training facility.
         </p>
 
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 max-w-xl mx-auto">

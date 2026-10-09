@@ -38,7 +38,7 @@ export default function BrandStatement() {
               <span>·</span>
               <span>KARNATAKA, INDIA</span>
               <span>·</span>
-              <span>13,000 SQ. FT.</span>
+              <span>BUILT DIFFERENT</span>
             </div>
           </div>
 

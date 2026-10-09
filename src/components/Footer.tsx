@@ -30,7 +30,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-zinc-400 text-[14px] max-w-sm leading-relaxed mb-5">
-              Tumakuru&apos;s premier 13,000 sq. ft. athletic training facility. Strength equipment, rooftop turf, and professional recovery.
+              Tumakuru&apos;s premier athletic training facility. Competition strength equipment, open-sky rooftop turf, and dedicated contrast recovery.
             </p>
             <div className="font-display text-lg text-zinc-200 tracking-wide uppercase">
               Built for the work.

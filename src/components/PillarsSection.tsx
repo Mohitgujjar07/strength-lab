@@ -20,7 +20,7 @@ export default function PillarsSection() {
             </h2>
           </div>
           <p className="max-w-md text-zinc-300 text-sm sm:text-base leading-relaxed">
-            Engineered from the ground up for serious intent. 13,000 sq. ft. of uncompromised strength equipment, functional rooftop turf, and professional athlete contrast recovery.
+            Engineered from the ground up for serious intent. Uncompromised strength equipment, functional rooftop turf, and professional athlete contrast recovery.
           </p>
         </div>
 
@@ -44,10 +44,10 @@ export default function PillarsSection() {
           <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
               <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#FFE600] font-semibold">
-                ARCHITECTURAL CAPACITY
+                ARCHITECTURAL SCALE
               </span>
               <h3 className="font-display text-2xl sm:text-4xl text-white tracking-tight">
-                13,000 SQ. FT. OF FOCUSED PURPOSE.
+                BUILT FOR UNCOMPROMISED PURPOSE.
               </h3>
             </div>
             <div className="flex items-center gap-3 text-xs font-mono text-zinc-300 uppercase tracking-widest bg-black/70 backdrop-blur-sm px-4 py-2 border border-white/10">

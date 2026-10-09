@@ -27,7 +27,7 @@ export default function FacilityGallery() {
             <div className="flex items-center gap-3 mb-4">
               <span className="w-2.5 h-2.5 bg-[#FFE600]" />
               <span className="label-caps text-xs text-[#FFE600]">
-                THE FACILITY // 13,000 SQ. FT.
+                THE FACILITY // DUAL-LEVEL ATHLETIC CLUB
               </span>
             </div>
             <h2 className="section-title text-white font-display">

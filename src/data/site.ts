@@ -161,7 +161,7 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   name: 'STRENGTH LAB',
   tagline: 'BUILT DIFFERENT.',
-  subTagline: 'Tumakuru’s Premier 13,000 Sq. Ft. High-Performance Strength & Conditioning Club',
+  subTagline: 'Tumakuru’s Premier High-Performance Strength & Conditioning Club',
   badge: 'EST. TUMAKURU // KARNATAKA',
   location: {
     city: 'Tumakuru',
@@ -215,10 +215,10 @@ export const siteConfig: SiteConfig = {
   hero: {
     eyebrow: 'STRENGTH LAB — TUMAKURU, KARNATAKA',
     headline: ['BUILT', 'DIFFERENT.'],
-    subheadline: 'A place for people who take their strength, performance and progress seriously. 13,000 sq. ft. of elite training equipment, rooftop turf, and advanced recovery.',
+    subheadline: 'A place for people who take their strength, performance and progress seriously. Elite competition equipment, open-sky rooftop turf, and advanced contrast recovery.',
     ctaPrimary: 'START YOUR JOURNEY',
     ctaSecondary: 'EXPLORE THE LAB',
-    locationLeft: 'TUMAKURU · KARNATAKA · 13,000 SQ. FT.',
+    locationLeft: 'TUMAKURU · KARNATAKA',
     scrollIndicator: 'SCROLL TO EXPLORE',
     bgImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop',
   },
@@ -433,9 +433,9 @@ export const siteConfig: SiteConfig = {
       id: 'discovery-day-pass',
       name: 'LAB DISCOVERY PASS',
       badge: 'FIRST EXPERIENCE',
-      tagline: 'Experience the 13,000 sq. ft. facility and full equipment before committing.',
+      tagline: 'Experience the facility and full equipment before committing.',
       features: [
-        'Full Day Access to 13,000 Sq. Ft. Floor',
+        'Full Day Access to the Training Floor',
         'Access to Free Weights, Racks & Cardio',
         'Rooftop Functional Turf Access',
         'Introductory Movement & Form Consultation',

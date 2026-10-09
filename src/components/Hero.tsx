@@ -96,7 +96,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
 
           {/* Key Quick Badges with Yellow Highlights */}
           <div className="mt-6 flex flex-wrap items-center gap-2.5 text-xs font-mono uppercase">
-            <span className="px-3 py-1 bg-[#121212] border border-[#FFE600]/30 text-white font-medium">13,000+ SQ. FT.</span>
+            <span className="px-3 py-1 bg-[#121212] border border-[#FFE600]/30 text-[#FFE600] font-semibold">DUAL-FLOOR TRAINING</span>
             <span className="text-zinc-600">/</span>
             <span className="px-3 py-1 bg-[#121212] border border-white/10 text-zinc-300">ROOFTOP TURF</span>
             <span className="text-zinc-600">/</span>
